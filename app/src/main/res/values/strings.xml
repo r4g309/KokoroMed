@@ -1,0 +1,210 @@
+<resources>
+    <string name="app_name">Kokoro Med</string>
+
+    <!-- Bottom navigation tabs -->
+    <string name="tab_library">Biblioteca</string>
+    <string name="tab_today">Hoy</string>
+    <string name="tab_progress">Progreso</string>
+    <string name="tab_settings">Ajustes</string>
+
+    <!-- Common actions -->
+    <string name="action_study">Estudiar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_export">Exportar</string>
+    <string name="action_import">Importar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_back">Atrás</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_add">Añadir</string>
+
+    <!-- Difficulty levels -->
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_medium">Media</string>
+    <string name="difficulty_hard">Difícil</string>
+
+    <!-- Today screen -->
+    <string name="today_cards_due">Tienes %1$d tarjetas listas para repasar.</string>
+    <string name="today_all_done">Estás al día. ¡Buen trabajo!</string>
+    <string name="today_nothing_pending">Nada pendiente</string>
+    <string name="today_come_back">Vuelve mañana o estudia tarjetas nuevas desde la biblioteca.</string>
+    <string name="today_upcoming">Próximos repasos</string>
+    <string name="today_label">Hoy</string>
+    <string name="today_due_count">%1$d para repasar</string>
+    <string name="today_new_count">%1$d nuevas</string>
+
+    <!-- Library screen -->
+    <string name="library_stats">%1$d mazos · %2$d tarjetas · </string>
+    <string name="library_due_today">%1$d pendientes hoy</string>
+    <string name="library_search_placeholder">Buscar mazos…</string>
+    <string name="library_fab_new_deck">Nuevo mazo</string>
+    <string name="library_fab_import">Importar JSON</string>
+    <string name="library_empty_title_no_results">Sin resultados</string>
+    <string name="library_empty_title_no_decks">Aún no tienes mazos</string>
+    <string name="library_empty_body_no_results">Prueba con otra búsqueda.</string>
+    <string name="library_empty_body_no_decks">Toca + para crear tu primer mazo o importar uno desde JSON.</string>
+
+    <!-- Deck card chips -->
+    <string name="chip_new_count">%1$d nuevas</string>
+    <string name="chip_learning_count">%1$d en curso</string>
+    <string name="chip_mastered_count">%1$d dominadas</string>
+    <string name="deck_stat_total">%1$d tarjetas</string>
+    <string name="deck_stat_due_today">%1$d hoy</string>
+    <string name="deck_stat_accuracy">%1$d%% acierto</string>
+
+    <!-- Progress screen -->
+    <string name="progress_subtitle">Un vistazo a tu constancia y a lo que dominas.</string>
+    <string name="progress_stat_streak_singular">día de racha</string>
+    <string name="progress_stat_streak_plural">días de racha</string>
+    <string name="progress_stat_today">estudiadas hoy</string>
+    <string name="progress_stat_week">esta semana</string>
+    <string name="progress_stat_mastery">dominio global</string>
+    <string name="progress_activity_title">Actividad de estudio</string>
+    <string name="progress_activity_stats">%1$d repasos · %2$d días</string>
+    <string name="progress_mastery_title">Dominio de tarjetas</string>
+    <string name="progress_due_today">tarjetas pendientes hoy</string>
+    <string name="progress_by_deck_title">Progreso por mazo</string>
+    <string name="progress_mastery_mastered">Dominadas</string>
+    <string name="progress_mastery_learning">En curso</string>
+    <string name="progress_mastery_new">Nuevas</string>
+    <string name="progress_due_today_short">%1$d hoy</string>
+    <string name="heatmap_less">Menos</string>
+    <string name="heatmap_more">Más</string>
+
+    <!-- Settings screen -->
+    <string name="settings_subtitle">Personaliza tu experiencia de estudio.</string>
+    <string name="settings_section_appearance">Apariencia</string>
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_subtitle">Elige entre claro, oscuro o el del sistema.</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_system">Sistema</string>
+    <string name="settings_theme_dark">Oscuro</string>
+    <string name="settings_section_study">Estudio</string>
+    <string name="settings_timer_title">Temporizador por tarjeta</string>
+    <string name="settings_timer_subtitle">Muestra cuánto tardas en cada tarjeta.</string>
+    <string name="settings_section_about">Acerca de</string>
+    <string name="settings_about_tagline">La memoria se construye con encuentros repetidos. Cada tarjeta es una oportunidad para que una idea deje de ser pasajera y se convierta en conocimiento permanente.</string>
+
+    <!-- Deck detail screen -->
+    <string name="deck_detail_stat_completed">Completado</string>
+    <string name="deck_detail_stat_due_today">Pendientes hoy</string>
+    <string name="deck_detail_stat_mastered">Dominadas</string>
+    <string name="deck_detail_stat_accuracy">Acierto medio</string>
+    <string name="deck_detail_cards_title">Tarjetas</string>
+    <string name="deck_detail_add_card">Añadir tarjeta</string>
+    <string name="deck_detail_filter_all">Todas</string>
+    <string name="deck_detail_filter_new">Nuevas</string>
+    <string name="deck_detail_filter_learning">En curso</string>
+    <string name="deck_detail_filter_mastered">Dominadas</string>
+    <string name="deck_detail_empty_category">No hay tarjetas en esta categoría.</string>
+    <string name="deck_detail_delete_title">¿Eliminar mazo?</string>
+    <string name="deck_detail_delete_body">Se borrarán todas las tarjetas y el progreso de este mazo.</string>
+    <string name="deck_detail_export_share">Compartir</string>
+    <string name="deck_detail_export_save">Guardar en dispositivo</string>
+    <string name="deck_detail_share_chooser">Compartir mazo</string>
+
+    <!-- Study session -->
+    <string name="study_no_cards">No hay tarjetas para estudiar.</string>
+    <string name="study_action_back">Volver</string>
+    <string name="study_chip_exam">Examen</string>
+    <string name="study_action_confirm">Confirmar</string>
+    <string name="study_action_results">Ver resultados</string>
+    <string name="study_action_next">Siguiente</string>
+    <string name="study_exit_title">¿Salir de la sesión?</string>
+    <string name="study_exit_exam_with_answers">Estás en modo examen. Si sales ahora perderás tus %1$d respuestas y no se guardará ningún progreso.</string>
+    <string name="study_exit_exam_no_answers">Estás en modo examen. Aún no has respondido nada.</string>
+    <string name="study_exit_study_with_answers">Tus %1$d tarjetas calificadas ya están guardadas. Solo perderás las tarjetas que falten por repasar en esta cola.</string>
+    <string name="study_exit_study_no_answers">Aún no has calificado ninguna tarjeta.</string>
+    <string name="study_action_exit">Salir</string>
+    <string name="study_action_keep_studying">Seguir estudiando</string>
+    <string name="study_feedback_correct">¡Correcto!</string>
+    <string name="study_feedback_incorrect">Incorrecto</string>
+    <string name="study_explanation_hide">Ocultar</string>
+    <string name="study_explanation_show">Ver explicación</string>
+    <string name="study_rating_prompt">¿Qué tal lo recordaste?</string>
+    <string name="study_rating_again">No supe</string>
+    <string name="study_rating_hard">Difícil</string>
+    <string name="study_rating_good">Bien</string>
+    <string name="study_rating_easy">Fácil</string>
+
+    <!-- Study setup -->
+    <string name="setup_title">Estudiar · %1$s</string>
+    <string name="setup_max_questions_title">Máximo de preguntas</string>
+    <string name="setup_max_questions_unlimited">Se usarán todas las disponibles</string>
+    <string name="setup_max_questions_limited">Selección aleatoria del mazo</string>
+    <string name="setup_questions_label">Número de preguntas</string>
+    <string name="setup_questions_placeholder">p. ej. 30</string>
+    <string name="setup_questions_error">Introduce un número mayor que 0</string>
+    <string name="setup_mode_due_label">Vencidas</string>
+    <string name="setup_mode_due_desc">Tarjetas que ya tocaba repasar.</string>
+    <string name="setup_mode_new_label">Nuevas</string>
+    <string name="setup_mode_new_desc">Tarjetas que nunca has visto.</string>
+    <string name="setup_mode_failed_label">Falladas</string>
+    <string name="setup_mode_failed_desc">Tarjetas en las que has tenido lapsos.</string>
+    <string name="setup_mode_exam_label">Examen</string>
+    <string name="setup_mode_exam_desc">Todas las tarjetas sin feedback inmediato.</string>
+
+    <!-- Session complete -->
+    <string name="session_grade_excellent">¡Excelente!</string>
+    <string name="session_grade_good">¡Bien hecho!</string>
+    <string name="session_grade_improving">Vas mejorando</string>
+    <string name="session_grade_keep_trying">A seguir practicando</string>
+    <string name="session_exam_complete">Examen completado</string>
+    <string name="session_study_complete">Sesión completada</string>
+    <string name="session_correct_label">correctas</string>
+    <string name="session_review_hint">Toca una pregunta para ver la explicación.</string>
+    <string name="session_back_to_deck">Volver al mazo</string>
+    <string name="session_you_answered">Respondiste: %1$s</string>
+    <string name="session_action_close">Cerrar</string>
+    <string name="session_action_detail">Ver detalle</string>
+
+    <!-- Card editor -->
+    <string name="card_editor_title_edit">Editar tarjeta</string>
+    <string name="card_editor_title_new">Nueva tarjeta</string>
+    <string name="card_editor_question_label">Pregunta</string>
+    <string name="card_editor_question_placeholder">¿Cuál es…?</string>
+    <string name="card_editor_options_title">Opciones de respuesta</string>
+    <string name="card_editor_options_hint">Toca el círculo para marcar la correcta.</string>
+    <string name="card_editor_option_placeholder">Opción %1$s</string>
+    <string name="card_editor_explanation_label">Explicación</string>
+    <string name="card_editor_explanation_placeholder">Por qué esta es la respuesta correcta…</string>
+    <string name="card_editor_explanation_supporting">Se muestra después de responder.</string>
+    <string name="card_editor_tags_label">Etiquetas</string>
+    <string name="card_editor_tags_placeholder">anatomía, corazón</string>
+    <string name="card_editor_tags_supporting">Separadas por comas</string>
+    <string name="card_editor_difficulty_label">Dificultad</string>
+    <string name="card_editor_save">Guardar tarjeta</string>
+
+    <!-- Deck editor -->
+    <string name="deck_editor_title_edit">Editar mazo</string>
+    <string name="deck_editor_title_new">Nuevo mazo</string>
+    <string name="deck_editor_name_label">Nombre del mazo</string>
+    <string name="deck_editor_name_placeholder">p. ej. Farmacología — Antibióticos</string>
+    <string name="deck_editor_desc_label">Descripción</string>
+    <string name="deck_editor_desc_placeholder">Mecanismos de acción, clasificación…</string>
+    <string name="deck_editor_desc_supporting">Opcional</string>
+    <string name="deck_editor_color_label">Color</string>
+    <string name="deck_editor_icon_label">Ícono</string>
+    <string name="deck_editor_save">Guardar</string>
+    <string name="deck_editor_create">Crear mazo</string>
+
+    <!-- Import sheet -->
+    <string name="import_title">Importar mazo desde JSON</string>
+    <string name="import_instructions">Pega el JSON, sube un archivo .json, o usa la plantilla. Iconos válidos: %1$s.</string>
+    <string name="import_upload_button">Subir .json</string>
+    <string name="import_template_button">Usar plantilla</string>
+    <string name="import_error_read_file">No se pudo leer el archivo.</string>
+
+    <!-- Import fallback -->
+    <string name="import_deck_fallback_name">Mazo importado</string>
+
+    <!-- Toast messages -->
+    <string name="toast_deck_updated">Mazo actualizado</string>
+    <string name="toast_deck_created">Mazo creado</string>
+    <string name="toast_card_updated">Tarjeta actualizada</string>
+    <string name="toast_card_added">Tarjeta añadida</string>
+    <string name="toast_imported">Importado: %1$s</string>
+    <string name="toast_invalid_json">JSON inválido: %1$s</string>
+</resources>
