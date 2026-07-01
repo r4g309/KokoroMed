@@ -1,5 +1,6 @@
 package dev.r4g309.kokoromed.ui.screens.deck
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -60,7 +61,6 @@ fun DeckDetailScreen(
     val uiState by vm.uiState.collectAsStateWithLifecycle()
     val filter by vm.filter.collectAsStateWithLifecycle()
     var showDeleteConfirm by remember { mutableStateOf(false) }
-    var showExportMenu   by remember { mutableStateOf(false) }
 
     // Propaga el nombre del mazo al TopAppBar global
     LaunchedEffect(uiState?.deck?.name) {
@@ -140,58 +140,44 @@ fun DeckDetailScreen(
                         Icon(painter = painterResource(R.drawable.edit_24px), contentDescription = stringResource(R.string.action_edit),
                             modifier = Modifier.size(18.dp))
                     }
-                    Box {
-                        OutlinedIconButton(
-                            onClick  = { showExportMenu = true },
-                            modifier = Modifier.size(42.dp),
-                        ) {
-                            Icon(painterResource(R.drawable.download_24px),
-                                contentDescription = stringResource(R.string.action_export),
-                                modifier = Modifier.size(18.dp))
-                        }
-                        DropdownMenu(
-                            expanded        = showExportMenu,
-                            onDismissRequest = { showExportMenu = false },
-                        ) {
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.deck_detail_export_share)) },
-                                leadingIcon = {
-                                    Icon(painterResource(R.drawable.upload_24px), null,
-                                        modifier = Modifier.size(18.dp))
-                                },
-                                onClick = {
-                                    showExportMenu = false
-                                    val json = exportDeckJson(dwp.deck, dwp.cards)
-                                    val fileName = dwp.deck.name
-                                        .replace(Regex("[^\\w]"), "_") + ".json"
-                                    val file = File(context.cacheDir, fileName)
-                                    file.writeText(json)
-                                    val uri = FileProvider.getUriForFile(
-                                        context, "${context.packageName}.fileprovider", file)
-                                    val intent = Intent(Intent.ACTION_SEND).apply {
-                                        type = "application/json"
-                                        putExtra(Intent.EXTRA_STREAM, uri)
-                                        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                                    }
-                                    context.startActivity(
-                                        Intent.createChooser(intent, context.getString(R.string.deck_detail_share_chooser)))
-                                },
-                            )
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.deck_detail_export_save)) },
-                                leadingIcon = {
-                                    Icon(painterResource(R.drawable.download_24px), null,
-                                        modifier = Modifier.size(18.dp))
-                                },
-                                onClick = {
-                                    showExportMenu = false
-                                    pendingJson = exportDeckJson(dwp.deck, dwp.cards)
-                                    val fileName = dwp.deck.name
-                                        .replace(Regex("[^\\w]"), "_") + ".json"
-                                    saveFileLauncher.launch(fileName)
-                                },
-                            )
-                        }
+                    // Compartir: genera el .json y abre el selector del sistema
+                    // (WhatsApp, correo, Drive…) vía FileProvider + ACTION_SEND.
+                    OutlinedIconButton(
+                        onClick = {
+                            val json = exportDeckJson(dwp.deck, dwp.cards)
+                            val fileName = dwp.deck.name
+                                .replace(Regex("[^\\w]"), "_") + ".json"
+                            val file = File(context.cacheDir, fileName)
+                            file.writeText(json)
+                            val uri = FileProvider.getUriForFile(
+                                context, "${context.packageName}.fileprovider", file)
+                            val intent = Intent(Intent.ACTION_SEND).apply {
+                                type = "application/json"
+                                putExtra(Intent.EXTRA_STREAM, uri)
+                                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                            }
+                            context.startActivity(
+                                Intent.createChooser(intent, context.getString(R.string.deck_detail_share_chooser)))
+                        },
+                        modifier = Modifier.size(42.dp),
+                    ) {
+                        Icon(painterResource(R.drawable.share_24px),
+                            contentDescription = stringResource(R.string.deck_detail_export_share),
+                            modifier = Modifier.size(18.dp))
+                    }
+                    // Guardar el .json como archivo en el dispositivo.
+                    OutlinedIconButton(
+                        onClick = {
+                            pendingJson = exportDeckJson(dwp.deck, dwp.cards)
+                            val fileName = dwp.deck.name
+                                .replace(Regex("[^\\w]"), "_") + ".json"
+                            saveFileLauncher.launch(fileName)
+                        },
+                        modifier = Modifier.size(42.dp),
+                    ) {
+                        Icon(painterResource(R.drawable.download_24px),
+                            contentDescription = stringResource(R.string.deck_detail_export_save),
+                            modifier = Modifier.size(18.dp))
                     }
                     OutlinedIconButton(onClick = { showDeleteConfirm = true },
                         modifier = Modifier.size(42.dp)) {

@@ -63,10 +63,11 @@ class StudyViewModel @Inject constructor(
         viewModelScope.launch {
             val dwp = repo.observeDeck(deckId).first() ?: return@launch
             val cards = dwp.cards
+            // buildQueue ya devuelve la cola barajada en todos los modos.
             var queue = buildQueue(cards, mode).map { it.id }
             // Aplica el límite si se especificó
             if (maxQuestions != null && queue.size > maxQuestions) {
-                queue = queue.shuffled().take(maxQuestions)
+                queue = queue.take(maxQuestions)
             }
             _state.update {
                 it.copy(

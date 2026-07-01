@@ -75,12 +75,13 @@ fun isDue(srs: SrsData, ref: String = todayKey()): Boolean = srs.due <= ref
 enum class StudyMode { due, new, failed, exam }
 
 fun buildQueue(cards: List<CardEntity>, mode: StudyMode, today: String = todayKey()): List<CardEntity> {
-    return when (mode) {
+    val filtered = when (mode) {
         StudyMode.due    -> cards.filter { it.reps > 0 && it.due <= today }
         StudyMode.new    -> cards.filter { it.reps == 0 }
         StudyMode.failed -> cards.filter { it.lapses > 0 && it.due <= today && cardState(it.toSrsData()) != CardState.mastered }
-        StudyMode.exam   -> cards.shuffled()
+        StudyMode.exam   -> cards
     }
+    return filtered.shuffled()
 }
 
 // ── Deck progress ─────────────────────────────────────────────────────────────
